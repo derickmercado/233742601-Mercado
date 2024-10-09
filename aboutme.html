@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="myscripts.js"></script>
+    <title>About Me</title>
+
+</head>
+
+<body>
+
+    <div class="container-bg"></div>
+
+    <div class="container">
+        <!-- Left side with image and socials -->
+        <div class="about-me">
+            <img src="me.jpg" alt="Profile Image">
+
+            <div class="socials">
+                <h2>Socials:</h2>
+
+                <div class="instagram-section">
+                    <a href="https://www.instagram.com/yohboi._.d/"><span>Instagram</span></a>
+                    <img src="i.png" alt="Instagram Icon">
+                </div>
+                <hr>
+
+                <div class="facebook-section">
+                    <a href="https://www.facebook.com/derick.myless"><span>Facebook</span></a>
+                    <img src="f.png" alt="Facebook Icon">
+                </div>
+                <hr>
+
+                <div class="tiktok-section">
+                    <a href="https://www.tiktok.com/@bushiiii00?lang=en"><span>Tiktok</span></a>
+                    <img src="t.png" alt="Tiktok Icon">
+                </div>
+                <hr>
+
+                <div class="x-section">
+                    <a href="https://x.com/DGreat35462409"><span>X</span></a>
+                    <img src="x.png" alt="X Icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side with buttons -->
+        <div class="button-section">
+            <button onclick="displayText('intro')">Intro</button>
+            <button onclick="displayText('about')">About</button>
+            <button onclick="displayText('skills')">Skills</button>
+            <button onclick="displayText('contacts')">Contact me</button>
+        </div>
+
+        <div id="intro">
+            <h1><span class="typewriter-text">Hello I'm <span class="n">Derick</span>,</span></h1><br>
+            <p><span class="typewriter-text">Welcome to my portfolio! I am a future developer with high dreams. <br>Feel free to check out my skills and get to know me well.</span></p>
+        </div>
+        
+        <div id="about" style="display: none;">
+            <h1><span class="typewriter-text"><span class="fn">About me:</span></span></h1><br>
+            <p><span class="typewriter-text">I'm 20 years old, I live in Baguio City, and I am currently <br> studying at the University of Cordillera.</span></p><br>
+            <p><span class="typewriter-text">I'm pursuing a Bachelor of Science in Information Technology. <br> I chose this course not just for the potential income, <br> but because of my passion for programming.</span></p><br>
+        </div>
+        
+        <div id="skills" style="display: none;">
+            <ul>
+                <h1><span class="typewriter-text">Skills in <span class="p">programming:</span></h1>
+                <li><span class="typewriter-text">HTML, CSS and JAVASCRIPT</span></li>
+                <li><span class="typewriter-text">Python</span></li>
+                <li><span class="typewriter-text">PHP</span></li>
+                <li><span class="typewriter-text">Java</span></li>
+            </ul>
+
+        
+            <ul>
+                <h1><span class="typewriter-text"><span class="ps">Personal</span> skills:</span></h1>
+                <li><span class="typewriter-text">Playing guitar</span></li>
+                <li><span class="typewriter-text">Playing basketball</span></li>
+                <li><span class="typewriter-text">Cooking</span></li>
+            </ul>  
+        </div>
+
+        <div id="contacts" style="display: none;">
+            <h1><span class="typewriter-text"><span class="ps">Contact me:</span></span></h1>
+            <form>
+                <label for="name"><span class="typewriter-text1"><span class="na">Name:</span></span></label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email"><span class="typewriter-text1"><span class="E">Email:</span></span></label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message"><span class="typewriter-text1"><span class="M">Message:</span></span></label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+
+</body>
+</html>
