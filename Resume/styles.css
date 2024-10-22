@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: monospace;
+
+}
+
+.about{
+    margin: 20px;
+    padding: 20px;
+}
+
+.about h1{
+    padding-bottom: 20px;
+}
+
+.about h2{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+img{
+    float: right;
+}
