@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SurveyForm</title>
+</head>
+
+<body>
+    <h1>..</h1>
+    <div class="container">
+        <h1 id="title">Survey Form</h1>
+
+        <p id="description" class="established">Thank you for taking the time to fill up our survey</p>
+
+        <!-- Start of the Form -->
+        <form id="survey-form" action="https://formspree.io/f/mnnqnjep" method="POST">
+            <!-- Name Input -->
+            <label id="name-label">Name
+                <input id="name" type="text" name="name" placeholder="Enter your name" required />
+            </label>
+            <br>
+
+            <!-- Email Input -->
+            <label id="email-label">Email
+                <input id="email" type="email" name="email" placeholder="Enter your Email" required />
+            </label>
+            <br>
+
+            <!-- Age Input -->
+            <label id="number-label">Age <small>(optional)</small>
+                <input id="number" type="number" name="age" min="10" max="99" placeholder="Age" />
+            </label>
+            <br>
+
+            <!-- Gender Radio Buttons -->
+            <label>Gender</label><br>
+            <div class="radio-group">
+                <label for="male">
+                    <input type="radio" name="gender" value="male" id="male" required> Male
+                </label>
+                <label for="female">
+                    <input type="radio" name="gender" value="female" id="female" required> Female
+                </label>
+                <label for="other">
+                    <input type="radio" name="gender" value="other" id="other" required> Other
+                </label>
+            </div>
+            <br>
+
+            <!-- School Dropdown -->
+            <label for="school-dropdown">Select your school</label>
+            <select id="school-dropdown" name="school" required>
+                <option value="">Select your school</option>
+                <option value="up-baguio">University of the Philippines Baguio</option>
+                <option value="slu">Saint Louis University</option>
+                <option value="uc">University of the Cordilleras</option>
+                <option value="ub">University of Baguio</option>
+                <option value="bsu">Benguet State University</option>
+                <option value="pines-intl">Pines International Academy</option>
+                <option value="st-scholastica">St. Scholastica’s Academy Baguio</option>
+                <option value="baguio-city-national">Baguio City National High School</option>
+                <option value="phil-science">Philippine Science High School CAR</option>
+                <option value="brent">Brent International School Baguio</option>
+            </select>
+            <br><br>
+
+            <!-- Course Dropdown -->
+            <label for="dropdown">What is your course</label>
+            <select id="dropdown" name="course" required>
+                <option value="">Select your major</option>
+                <option value="1">Web-tech</option>
+                <option value="2">Netsec</option>
+                <option value="3">ERP</option>
+                <option value="4">Prefer not to say</option>
+                <option value="5">Other</option>
+            </select>
+
+            <!-- Interests Checkboxes -->
+            <fieldset>
+                <legend>Select your interests</legend>
+                <label><input type="checkbox" name="interests" value="web-development"> Web Development</label>
+                <label><input type="checkbox" name="interests" value="cybersecurity"> Cybersecurity</label>
+                <label><input type="checkbox" name="interests" value="data-science"> Data Science</label>
+                <label><input type="checkbox" name="interests" value="ai-ml"> AI & Machine Learning</label>
+            </fieldset>
+
+            <!-- Feedback Textarea -->
+            <label for="feedback">Please share what you feel about AI</label>
+            <textarea id="feedback" name="feedback" rows="4" placeholder="Your opinion..."></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    <h1>..</h1>
+</body>
+
+</html>
