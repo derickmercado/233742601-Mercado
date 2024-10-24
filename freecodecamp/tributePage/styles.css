@@ -1,0 +1,173 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+/* Body Styling */
+body {
+    background-color: #0d0d0d;  
+    color: #f4f4f4;  
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+/* Parallax Header Section */
+.header {
+    position: relative;
+    height: 100vh;
+    background: url('luna-background.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.header h1 { 
+    font-size: 5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeInDown 2s ease;
+}
+
+span{
+    color: #ff6347;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeInDown 2s ease;
+}
+
+.header p {
+    font-size: 1.5rem;
+    font-style: italic;
+    animation: fadeInUp 2s ease;
+    margin-top: 10px;
+}
+
+/* Parallax Scroll Effect */
+.header {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+/* Container Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    gap: 30px;
+    background-color: #1b1b1b;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Horizontal Card Styling */
+.card {
+    display: flex;
+    align-items: center;
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    color: #ff6347;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #e6e6e6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #0d0d0d;
+    color: #f4f4f4;
+    border-top: 2px solid #ff6347;
+}
+
+
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+  
