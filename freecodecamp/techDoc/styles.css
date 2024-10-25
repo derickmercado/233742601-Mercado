@@ -1,0 +1,183 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Header Title */
+.title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 300px;
+}
+
+/* Content Section */
+.content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Documentation Sections */
+.section {
+    width: 45%;
+}
+
+/* Section Headers */
+.section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.css h2 {
+    background-color: #ff6680;
+}
+
+.php h2 {
+    background-color: #7367f0;
+}
+
+/* Individual Items */
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Icon Styling */
+.item img {
+    width: 20%;
+    height: 20%;
+    margin-right: 20px;
+}
+
+/* Link Styling */
+.item a {
+    font-family: monospace;
+    font-size: 2.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.SEC1 a:hover {
+    color: #ff6680;
+}
+
+.SEC2 a:hover {
+    color: #7367f0;
+}
+
+/* HTML Section Content */
+.html {
+    width: 80%;
+    margin: 50px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-behavior: smooth;
+}
+
+/* Information Section Styling */
+.information {
+    width: 100%;
+    margin-top: 600px;
+    font-size: 20px;
+    font-family: monospace;
+    color: rgb(82, 82, 82);
+}
+
+
+/* Full-page height for each information section */
+.info-section {
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: white;
+    border-style:solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    position: relative;
+    padding-top: 60px;
+}
+
+
+
+.info-section a{    
+    font-size: 30px;
+    margin-left: -2100px;
+    margin-top: 25px;
+    display: flex;
+    color: #333;
+    text-decoration: none;
+}
+
+.info-section a:hover{    
+    color:#7367f0;
+}
+
+.info-section img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 130px;  
+    height: auto;
+}
+
+/* Styling for code blocks */
+pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: 80%;
+    font-size: 2rem;
+    color: #333;
+    width: 100%;
+    text-align: left;
+}
+
+/* Center text and set max width for readability */
+.info-section h3 {
+    font-size: 2rem;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 100%;
+    }
+}

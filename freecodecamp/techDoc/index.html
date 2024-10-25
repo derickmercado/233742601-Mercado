@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation</title>
+</head>
+
+<body>
+    <h1 class="title">Technical Documentation</h1>
+
+    <div class="content">
+        <!-- HTML AND CSS SECTION -->
+        <div class="section css">
+            <h2>HTML AND CSS</h2>
+            <div class="item SEC1">
+                <img src="html.png" alt="html">
+                <a href="#html-section">What is Hypertext Markup Language (HTML)?</a>
+            </div>
+            <div class="item SEC1">
+                <img src="css.png" alt="css">
+                <a href="#css-section">What is Cascading Style Sheets (CSS)?</a>
+            </div>
+        </div>
+
+        <!-- JS AND PHP SECTION -->
+        <div class="section php">
+            <h2>JS AND PHP</h2>
+            <div class="item SEC2">
+                <img src="JS.png" alt="JS">
+                <a href="#js-section">What is JavaScript (JS)?</a>
+            </div>
+            <div class="item SEC2">
+                <img src="php.png" alt="php">
+                <a href="#php-section">What is PHP: Hypertext Preprocessor (PHP)?</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="information">
+        <!-- HTML Section -->
+        <div id="html-section" class="info-section">
+            <div>
+                <img src="html.png" alt="html">
+            </div>
+
+            
+            <a href="#css-section">•CSS</a>
+            <a href="#js-section">•JS</a>
+            <a href="#php-section">•PHP</a>
++            
+            <h3>
+                HTML is used to create webpages but does experience limitations
+                when it comes to fully responsive components. Therefore, HTML should
+                only be used to add text elements and structure them within a page.
+            </h3>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;title&gt;Sample HTML&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+      
+     
+        </div>
+        
+        <!-- CSS Section -->
+        <div id="css-section" class="info-section">
+            <img src="css.png" alt="css">
+            <a href="#html-section">•HTML</a>
+            <a href="#js-section">•JS</a>
+            <a href="#php-section">•PHP</a>
+
+            <h3>
+                CSS is a stylesheet language used to control the visual presentation
+                of a webpage, including layout, colors, fonts, and spacing. It helps
+                ensure the website looks good across different devices and screens.
+            </h3>
+            <pre>
+                <code>
+                    body {
+                        background-color: #f0f0f0;
+                        font-family: Arial, sans-serif;
+                    }
+                    h1 {
+                        color: #333;
+                        text-align: center;
+                    }
+                </code>
+            </pre>
+        </div>
+        
+        <!-- JavaScript Section -->
+        <div id="js-section" class="info-section">
+            <img src="JS.png" alt="JS">
+            <a href="#html-section">•HTML</a>
+            <a href="#css-section">•CSS</a>
+            <a href="#php-section">•PHP</a>
+
+            <h3>
+                JavaScript is a programming language that allows developers to create 
+                interactive and dynamic content on webpages. It can be used to control 
+                animations, modify HTML elements, and respond to user events.
+            </h3>
+            <pre>
+                <code>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        document.querySelector("h1").addEventListener("click", () => {
+                            alert("Hello, World!");
+                        });
+                    });
+                </code>
+            </pre>
+        </div>
+        
+        <!-- PHP Section -->
+        <div id="php-section" class="info-section">
+            <img src="php.png" alt="php">
+
+            
+            <a href="#html-section">•HTML</a>
+            <a href="#js-section">•JS</a>
+            <a href="#css-section">•CSS</a>
+
+            <h3>
+                PHP is a server-side scripting language primarily used to develop
+                dynamic web applications and interact with databases. It powers
+                many content management systems like WordPress.
+            </h3>
+            <pre>
+                <code>
+                    &lt;?php
+                    echo "Hello, World!";
+                    ?&gt;
+                </code>
+            </pre>
+        </div>
+    </div>
+    
+
+   
+</body>
+</html>
