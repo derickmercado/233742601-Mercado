@@ -96,88 +96,146 @@ body {
 }
 
 /* Information Section Styling */
+/* General Styling */
 .information {
     width: 100%;
-    margin-top: 600px;
-    font-size: 20px;
+    font-size: 1rem;
     font-family: monospace;
     color: rgb(82, 82, 82);
+    padding: 20px;
 }
 
-
-/* Full-page height for each information section */
+/* Individual Info Sections */
 .info-section {
     width: 100%;
-    height: 100vh; 
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
     background-color: white;
-    border-style:solid;
+    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
     position: relative;
-    padding-top: 60px;
 }
 
-
-
-.info-section a{    
-    font-size: 30px;
-    margin-left: -2100px;
-    margin-top: 25px;
+/* Image and Link Container */
+.info-section div {
     display: flex;
-    color: #333;
-    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-.info-section a:hover{    
-    color:#7367f0;
-}
-
+/* Image Styling */
 .info-section img {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 130px;  
+    width: 120px;
     height: auto;
 }
 
-/* Styling for code blocks */
+/* Hyperlink Styling */
+.info-section a {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.info-section a:hover {
+    color: #7367f0;
+}
+
+/* Heading Styling */
+.info-section h3 {
+    font-size: 1.5rem;
+    max-width: 700px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Code Block Styling */
 pre {
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
-    max-width: 80%;
-    font-size: 2rem;
+    font-size: 1rem;
     color: #333;
-    width: 100%;
+    width: 90%;
+    max-width: 600px;
     text-align: left;
 }
 
-/* Center text and set max width for readability */
-.info-section h3 {
-    font-size: 2rem;
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 20px;
+/* Medium Screen Adjustments */
+@media (max-width: 992px) {
+    .info-section {
+        padding: 15px;
+    }
+
+    .info-section img {
+        width: 100px;
+    }
+
+    .info-section a {
+        font-size: 1.1rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.3rem;
+    }
+
+    pre {
+        font-size: 0.95rem;
+    }
 }
 
-
-
-
-/* Responsive Design */
+/* Small Screen Adjustments */
 @media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
+    .info-section img {
+        width: 90px;
     }
 
-    .section {
-        width: 100%;
+    .info-section a {
+        font-size: 1rem;
+    }
+
+    .info-section h3 {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+
+    pre {
+        font-size: 0.9rem;
+        padding: 8px;
     }
 }
+
+/* Extra Small Screen Adjustments */
+@media (max-width: 480px) {
+    .info-section {
+        padding: 10px;
+    }
+
+    .info-section img {
+        width: 80px;
+    }
+
+    .info-section a {
+        font-size: 0.9rem;
+    }
+
+    .info-section h3 {
+        font-size: 1rem;
+    }
+
+    pre {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}
+
