@@ -22,7 +22,7 @@ body {
     height: 100%;
     background-color: black;
     opacity: 50%;
-    z-index: -1; /* Make sure the background is behind other content */
+    z-index: -1; 
 }
 
 .container {
@@ -34,12 +34,12 @@ body {
     background-color: black;
     opacity: 0.9;
     display: flex;
-    justify-content: space-between; /* Separate content to the left and right */
+    justify-content: space-between; 
     align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the container */
+    transform: translate(-50%, -50%); 
     padding-left: 20px;
     padding-right: 20px;
     border: 5px solid white;
@@ -47,18 +47,18 @@ body {
 
 .about-me {
     display: flex;
-    flex-direction: column; /* Stack image and text vertically */
+    flex-direction: column; 
     align-items: center;
     color: aliceblue;
     padding-left: 30px;
 }
 
 .about-me img {
-    width: 170px; /* Keep the image square */
+    width: 170px; 
     height: 170px;
-    object-fit: cover; /* Ensure the image fits perfectly */
+    object-fit: cover; 
     border-radius: 10px;
-    margin-bottom: 10px; /* Add space between the image and the text */
+    margin-bottom: 10px; 
 }
 
 .socials {
@@ -72,7 +72,7 @@ body {
 .instagram-section, .facebook-section, .tiktok-section, .x-section {
     display: inline-flex;
     align-items: center;
-    margin-top: 10px; /* Add space between sections */
+    margin-top: 10px;
 }
 
 .instagram-section img, .facebook-section img, .tiktok-section img, .x-section img {
@@ -118,8 +118,8 @@ hr {
 .button-section {
     display: flex;
     margin-right: 50px;
-    gap: 130px; /* Adjust gap for proper spacing */
-    margin-top: -480px; /* Adjust based on your layout */
+    gap: 130px; 
+    margin-top: -480px; 
 }
 
 .button-section button {
@@ -127,24 +127,24 @@ hr {
     font-size: 18px;
     font-weight: bold;
     color: white;
-    background: linear-gradient(45deg, #aaa9ad, #313030); /* Gradient background */
+    background: linear-gradient(45deg, #aaa9ad, #313030); 
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-section button:hover {
-    background: linear-gradient(45deg, #d5d7d8, #2808f7); /* Reverse gradient on hover */
-    transform: translateY(-3px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+    background: linear-gradient(45deg, #d5d7d8, #2808f7); 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .button-section button:active {
-    transform: translateY(0); /* Return to normal position when clicked */
-    box-shadow: 0 4px 6px rgba(87, 8, 233, 0.1); /* Return to normal shadow */
+    transform: translateY(0); 
+    box-shadow: 0 4px 6px rgba(87, 8, 233, 0.1); 
     color: #2808f7;
     
 }
@@ -182,21 +182,21 @@ ul{
 }
 
 #contacts {
-    display: none; /* Hide by default; use JavaScript to show */
-    position: absolute; /* Change to relative for better alignment */
+    display: none; 
+    position: absolute;
     color: white;
     font-family: monospace;
     margin-left: 20%;
     margin-top: 110px;
-    padding: 20px; /* Add padding for better spacing inside the container */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 #contacts label {
     margin-top: 20px;
-    font-size: 18px; /* Larger font size for labels */
+    font-size: 18px; 
 
 }
 
@@ -208,27 +208,27 @@ ul{
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 30px;
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners for inputs */
-    font-size: 16px; /* Consistent font size */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-    color: white; /* Text color */
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white; 
 }
 
 #contacts button {
-    margin-top: 10px; /* Space above button */
-    padding: 10px 15px; /* Add padding for a better button */
-    background-color: #2808f7; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 18px; /* Consistent font size */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    margin-top: 10px; 
+    padding: 10px 15px; 
+    background-color: #2808f7; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 18px; 
+    transition: background-color 0.3s ease;
 }
 
 #contacts button:hover {
-    background-color: #3a1ce4; /* Darker shade for hover effect */
+    background-color: #3a1ce4;
 }
 
 #contacts h1{
@@ -256,7 +256,7 @@ ul{
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid white; /* Simulates the cursor */
+    border-right: 2px solid white; 
     width: 0;
     animation: typing 1.5s steps(40, end) forwards, blink 0.75s step-end infinite alternate;
 }
@@ -270,7 +270,7 @@ ul{
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid white; /* Simulates the cursor */
+    border-right: 2px solid white;
     width: 0;
     animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite alternate;
 }
@@ -283,8 +283,8 @@ ul{
 .fn, .n, .p, .ps, .na, .E, .M {
     background: linear-gradient(45deg, #d5d7d8, #2808f7);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Makes the text color transparent */
-    background-clip: text; /* For non-WebKit browsers */
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
 }
 
 
