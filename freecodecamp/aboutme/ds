@@ -1,0 +1,40 @@
+<div class="content-container">
+            <!-- Buttons to toggle sections -->
+            <div class="button-container">
+                <button onclick="showSection('about')">About</button>
+                <button onclick="showSection('skills')">Skills</button>
+                <button onclick="showSection('contacts')">Contacts</button>
+            </div>
+
+            <!-- About Section -->
+            <div id="about" class="section">
+                <h2>About Me</h2>
+                <p>Hello! I am [Your Name], a passionate web developer.</p>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills" class="section">
+                <h2>Skills</h2>
+                <p>HTML, CSS, JavaScript, and more.</p>
+            </div>
+
+            <!-- Contacts Section -->
+            <div id="contacts" class="section">
+                <h2>Contacts</h2>
+                <p>Email: example@gmail.com</p>
+                <p>Phone: 123-456-7890</p>
+            </div>
+        </div>
+
+
+        <script>
+            function showSection(sectionId) {
+                // Hide all sections
+                document.getElementById('about').style.display = 'none';
+                document.getElementById('skills').style.display = 'none';
+                document.getElementById('contacts').style.display = 'none';
+    
+                // Show the selected section
+                document.getElementById(sectionId).style.display = 'block';
+            }
+        </script>
