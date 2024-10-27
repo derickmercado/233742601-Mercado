@@ -14,7 +14,6 @@ body {
     background-size: cover;
 }
 
-/* Header */
 header {
     background-color: #fff;
     position: fixed;
@@ -43,19 +42,12 @@ header {
     margin-right: 8px;
 }
 
-.menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-}
-
 .menu-list li {
     list-style: none;
+    display: inline-block;
     margin-left: 44px;
     cursor: pointer;
     transition: color 0.5s;
-    display: inline-block;
 }
 
 .menu-list li.active,
@@ -63,17 +55,11 @@ header {
     color: #8b4b02;
 }
 
-/* Main Section */
 .main {
     padding-top: 180px;
     position: relative;
     flex: 1;
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    padding: 0 16px; 
 }
 
 .left {
@@ -86,7 +72,6 @@ header {
     font-size: 4.9em;
     letter-spacing: 1px;
     margin: 48px auto;
-    text-align: center; 
 }
 
 .title strong {
@@ -101,7 +86,6 @@ header {
     letter-spacing: 0.7px;
     line-height: 32px;
     margin-bottom: 48px;
-    text-align: center;
 }
 
 button.cta {
@@ -117,7 +101,6 @@ button.cta {
     box-shadow: 7px 12px 20px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: background-color 0.5s;
-    margin: 0 auto; 
 }
 
 button.cta:hover {
@@ -136,29 +119,22 @@ button.cta i {
     margin-left: 16px;
 }
 
-/* Right Side */
+/*  Right Side  */
+
 .right {
     padding: 40px 0 0 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    max-width: 100%; 
 }
 
 .right img {
-    max-width: 100%; 
-    height: auto;
+    max-width: 900px;
 }
 
-/* Colors Section */
 .colors {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
     border-top: 3px dotted #fff;
-    gap: 16px;
-    padding-top: 20px;
 }
 
 .colors .item {
@@ -170,6 +146,7 @@ button.cta i {
     min-height: 180px;
     padding-top: 40px;
 }
+
 
 .item img {
     position: relative;
@@ -202,6 +179,14 @@ button.cta i {
     background-color: #bb0606;
 }
 
+.item:first-child {
+    transform: translateX(-50%);
+}
+
+.item:last-child {
+    transform: translateX(50%);
+}
+
 .item.active img {
     width: 130px;
 }
@@ -227,74 +212,4 @@ button.cta i {
     font-size: 1.1em;
     letter-spacing: 0.5px;
     font-weight: bold;
-    transform: translateX(-50%);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .left {
-        max-width: 100%;
-        text-align: center;
-        padding: 0;
-    }
-
-    .right {
-        padding: 40px 0 0 0;
-        max-width: 100%;
-    }
-
-    .menu-list li {
-        margin-left: 20px;
-        font-size: 1.2em;
-    }
-
-    .title {
-        font-size: 3em;
-    }
-
-    .main {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 0 24px;
-        font-size: 1.3em;
-    }
-
-    .logo img {
-        width: 80px;
-    }
-
-    .menu-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    button.cta {
-        padding: 14px 24px;
-    }
-}
-
-@media (max-width: 576px) {
-    .title {
-        font-size: 2.5em;
-    }
-
-    .msg {
-        font-size: 1em;
-        line-height: 28px;
-    }
-
-    .colors .item {
-        min-width: 100px;
-        min-height: 150px;
-    }
-
-    .additional-info {
-        font-size: 1em;
-        padding: 12px 16px;
-    }
 }
