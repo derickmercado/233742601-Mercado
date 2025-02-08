@@ -1,0 +1,686 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    position: relative;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+#home {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                url("bg.webp") no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+#about {
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: transparent; 
+    color: white;
+    font-size: 20px;
+    z-index: 6000;
+}
+
+nav ul {
+    list-style: none;  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+nav ul h3{
+    margin-right: 70%;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav ul h3 span{
+   color: aqua;
+}
+
+
+nav ul li {
+    margin-right: 80px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+nav ul li a.active {
+    color: cyan; /* Highlight the active section */
+    font-weight: bold;
+    border-bottom: 2px solid cyan; /* Optional underline effect */
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    filter: drop-shadow(5px 5px 30px rgb(15, 189, 189));
+}
+
+.intro{
+    margin-top: 12%;
+    text-align: center;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 40px;
+}
+
+.intro button{
+    background-color: antiquewhite;
+    font-size: 20px;
+    height: 50px;
+    width: 135px;
+    border-radius: 50px;
+    border-style: none;
+    font-family: "Lilita One", serif; 
+    font-weight: bold;
+    transition: text-decoration 0.3s ease-in-out; 
+}
+
+.intro button:hover{
+    box-shadow: 1px 1px 20px rgb(15, 189, 189);
+    
+}
+
+.hidden-images {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    margin-top: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.hidden-images img {
+    width: 350px; 
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.6); 
+    box-shadow: 0px 0px 15px rgba(164, 7, 236, 0.966); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.intro button:hover + .hidden-images {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hidden-images img:hover {
+    transform: scale(1.10); 
+    box-shadow: 0px 0px 25px rgb(83, 206, 223); 
+}
+
+
+.intro button:hover .hidden-images,
+.hidden-images:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.about img {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+
+.apartments {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.apartment-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.apartment {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.apartment img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact button {
+    background: cyan;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    box-shadow: 0px 0px 10px white;
+}
+
+
+/* About Section */
+#about {
+    font-family: monospace;
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between;
+    padding: 80px 10%;
+    max-width: 1200px;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Left Side (Text Content) */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+    padding: 20px;
+    border-left: 4px solid cyan;
+}
+
+.about-text h1 {
+    font-size: 32px;
+    color: cyan;
+    margin-bottom: 20px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.9);
+}
+
+
+#holosuites {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: relative;
+}
+
+.section-title {
+    font-size: 36px;
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Carousel Styling */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.holosuite-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    width: 80%;
+}
+
+/* Hide scrollbar */
+.holosuite-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Styles */
+.holosuite-card {
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+    overflow: hidden;
+    width: 300px;
+    min-width: 300px;
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+.holosuite-card:hover {
+    transform: scale(1.05);
+}
+
+.holosuite-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.holosuite-info {
+    padding: 20px;
+}
+
+.holosuite-info h3 {
+    margin: 0;
+    font-size: 22px;
+    color: cyan;
+}
+
+.holosuite-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 20px;
+    color: limegreen;
+}
+
+.view-details {
+    background: cyan;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.view-details:hover {
+    background: limegreen;
+    color: white;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: rgba(0, 255, 255, 0.7);
+    color: black;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: 0.3s;
+    position: absolute;
+}
+
+.left-btn {
+    left: 0;
+}
+
+.right-btn {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background: limegreen;
+    color: white;
+}
+
+#contact {
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    background: #000000;
+    color: #fff;
+}
+
+.contact-container {
+    width: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background: cyan;
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00bcd4;
+}
+
+/* Highlight active navbar */
+nav ul li a.active {
+    color: cyan;
+    font-weight: bold;
+    border-bottom: 2px solid cyan;
+}
+
+
+footer{
+    margin-top: 20%;
+}
+
+
+/* Default styles (for large screens) are already defined in your CSS */
+
+/* 🔹 1465x1125 & 1440x847 - Slight Adjustments for Large Screens */
+@media (max-width: 1465px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Default styles are already set for larger screens */
+
+/* 📍 Responsive Layout */
+
+/* 🔹 1465px & 1440px - Slight Adjustments for Large Screens */
+@media (max-width: 1440px) {
+
+    nav{
+        margin-left: -7%;
+        position: fixed;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* 🔹 1024px - Tablet Adjustments */
+@media (max-width: 1024px) {
+    body{
+        background-color: black;
+        position: relative;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    #home {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                    url("bg.webp") no-repeat center center/cover;
+        height: 100vh;
+        width: 150vh;
+        display: flex;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+
+    .intro{
+        margin-left: -19%;
+        margin-top: 30%;
+    }
+    nav {
+        position: fixed;
+        padding: 10px;
+        font-size: 18px;
+        margin-left: -20%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 300px;
+        margin: 20px auto;
+    }
+
+    .apartment-list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .apartment {
+        width: 45%; /* Two per row */
+    }
+}
+
+//* 🔹 768px - Small Tablets & Phones */
+@media (max-width: 768px) {
+    body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    #home {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                    url("bg.webp") no-repeat center center/cover;
+        height: 100vh;
+        width: 100%; /* Fixed width issue */
+        display: flex;
+        flex-direction: column; /* Adjusted for stacking */
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, 0.8); /* Added background for readability */
+        color: white;
+        font-size: 18px;
+        z-index: 6000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    nav ul {
+        list-style: none;  
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-end;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 40px 5%;
+    }
+
+    .about-image img {
+        max-width: 250px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .apartment {
+     
+        width: 100%; 
+    }
+}
+
+
+/* 🔹 480px & Below - Mobile Optimized */
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 24px;
+    }
+
+    .intro button {
+        font-size: 18px;
+        width: 120px;
+        height: 40px;
+    }
+
+    .about-container {
+        padding: 30px 5%;
+    }
+
+    .about-image img {
+        max-width: 200px;
+    }
+
+    .apartment {
+        width: 100%; /* Full width */
+    }
+}
+
+/* 📍 Responsive Holosuite Slider */
+.holosuite-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.holosuite-item {
+    min-width: 300px;
+    margin-right: 20px;
+}
+
+.holosuite-item img {
+    width: 100%;
+    border-radius: 10px;
+}
