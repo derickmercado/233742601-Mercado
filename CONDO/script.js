@@ -1,14 +1,14 @@
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent instant jump
+        e.preventDefault(); 
 
-        const targetId = this.getAttribute('href').substring(1); // Remove #
+        const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 50, // Adjust offset if needed
-                behavior: 'smooth' // Enables smooth scrolling
+                top: targetElement.offsetTop - 50,
+                behavior: 'smooth' 
             });
         }
     });
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let scrollPosition = window.scrollY;
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100; // Adjust for navbar height
+            const sectionTop = section.offsetTop - 100; 
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute("id");
 
@@ -62,5 +62,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", updateActiveSection);
-    updateActiveSection(); // Call on page load to set active section
+    updateActiveSection(); 
 });
