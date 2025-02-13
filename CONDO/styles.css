@@ -20,7 +20,8 @@ body {
 #home {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
                 url("bg.webp") no-repeat center center/cover;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,9 +77,9 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    color: cyan; /* Highlight the active section */
+    color: cyan; 
     font-weight: bold;
-    border-bottom: 2px solid cyan; /* Optional underline effect */
+    border-bottom: 2px solid cyan;
 }
 
 nav ul li a:hover {
@@ -221,11 +222,10 @@ nav ul li a:hover {
 }
 
 
-/* About Section */
 #about {
     font-family: monospace;
     display: flex;
-    align-items: center; /* Aligns items vertically */
+    align-items: center; 
     justify-content: space-between;
     padding: 80px 10%;
     max-width: 1200px;
@@ -233,7 +233,6 @@ nav ul li a:hover {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Left Side (Text Content) */
 .about-container {
     display: flex;
     align-items: center;
@@ -307,7 +306,6 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* Carousel Styling */
 .carousel-container {
     display: flex;
     align-items: center;
@@ -327,12 +325,10 @@ nav ul li a:hover {
     width: 80%;
 }
 
-/* Hide scrollbar */
 .holosuite-carousel::-webkit-scrollbar {
     display: none;
 }
 
-/* Card Styles */
 .holosuite-card {
     background: #111;
     border-radius: 10px;
@@ -391,7 +387,6 @@ nav ul li a:hover {
     color: white;
 }
 
-/* Carousel Buttons */
 .carousel-btn {
     background: rgba(0, 255, 255, 0.7);
     color: black;
@@ -470,7 +465,6 @@ button:hover {
     background: #00bcd4;
 }
 
-/* Highlight active navbar */
 nav ul li a.active {
     color: cyan;
     font-weight: bold;
@@ -483,192 +477,7 @@ footer{
 }
 
 
-/* Default styles (for large screens) are already defined in your CSS */
 
-/* 🔹 1465x1125 & 1440x847 - Slight Adjustments for Large Screens */
-@media (max-width: 1465px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        margin: 0 auto;
-        display: block;
-    }
-}
-
-/* Default styles are already set for larger screens */
-
-/* 📍 Responsive Layout */
-
-/* 🔹 1465px & 1440px - Slight Adjustments for Large Screens */
-@media (max-width: 1440px) {
-
-    nav{
-        margin-left: -7%;
-        position: fixed;
-    }
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        margin: 0 auto;
-        display: block;
-    }
-}
-
-/* 🔹 1024px - Tablet Adjustments */
-@media (max-width: 1024px) {
-    body{
-        background-color: black;
-        position: relative;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    #home {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
-                    url("bg.webp") no-repeat center center/cover;
-        height: 100vh;
-        width: 150vh;
-        display: flex;
-        justify-content: center;
-        color: white;
-        text-align: center;
-    }
-
-    .intro{
-        margin-left: -19%;
-        margin-top: 30%;
-    }
-    nav {
-        position: fixed;
-        padding: 10px;
-        font-size: 18px;
-        margin-left: -20%;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image img {
-        max-width: 300px;
-        margin: 20px auto;
-    }
-
-    .apartment-list {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .apartment {
-        width: 45%; /* Two per row */
-    }
-}
-
-//* 🔹 768px - Small Tablets & Phones */
-@media (max-width: 768px) {
-    body {
-        background-color: black;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-
-    #home {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
-                    url("bg.webp") no-repeat center center/cover;
-        height: 100vh;
-        width: 100%; /* Fixed width issue */
-        display: flex;
-        flex-direction: column; /* Adjusted for stacking */
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-        padding: 20px;
-    }
-
-    nav {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        padding: 15px 20px;
-        background: rgba(0, 0, 0, 0.8); /* Added background for readability */
-        color: white;
-        font-size: 18px;
-        z-index: 6000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    nav ul {
-        list-style: none;  
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-end;
-    }
-
-    nav ul li {
-        margin: 10px 20px;
-    }
-
-    .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 40px 5%;
-    }
-
-    .about-image img {
-        max-width: 250px;
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .apartment {
-     
-        width: 100%; 
-    }
-}
-
-
-/* 🔹 480px & Below - Mobile Optimized */
-@media (max-width: 480px) {
-    .intro h1 {
-        font-size: 24px;
-    }
-
-    .intro button {
-        font-size: 18px;
-        width: 120px;
-        height: 40px;
-    }
-
-    .about-container {
-        padding: 30px 5%;
-    }
-
-    .about-image img {
-        max-width: 200px;
-    }
-
-    .apartment {
-        width: 100%; /* Full width */
-    }
-}
-
-/* 📍 Responsive Holosuite Slider */
 .holosuite-slider {
     display: flex;
     overflow-x: auto;
@@ -683,4 +492,152 @@ footer{
 .holosuite-item img {
     width: 100%;
     border-radius: 10px;
+}
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .nav-links {
+        width: 60%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+    }
+
+    .holosuite-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .holosuite-card {
+        width: 60%;
+    }
+
+    .contact-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .holosuite-card {
+        width: 80%;
+    }
+
+    .contact-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 425px) {
+    #home {
+        background-image: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+
+    body {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+                    url("bg.webp") no-repeat center center/cover;
+    }
+
+    .intro {
+        margin-top: 20%;
+    }
+
+    nav ul h3 {
+        margin-right: 50%;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    .holosuite-card {
+        width: 90%;
+    }
+
+    .contact-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 320px) {
+    .intro {
+        margin-top: 30%;
+    }
+
+    nav ul h3 {
+        margin-right: 40%;
+    }
+
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    .holosuite-card {
+        width: 100%;
+    }
+
+    .contact-container {
+        width: 100%;
+    }
 }
