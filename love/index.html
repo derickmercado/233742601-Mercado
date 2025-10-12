@@ -1,104 +1,66 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>This one is for my Varchhu</title>
-
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
-<link href="default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="garden.js"></script>
-<script type="text/javascript" src="functions.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary, My Love! 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <div class="container">
+        <!-- Background Hearts Animation -->
+        <div class="hearts-bg"></div>
 
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-			<span class="comments">/**</span><br />
-			<span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
-			<span class="space"/><span class="comments">*/</span><br />
-			HI love<br />
-			HAPPY VALENTINES DAY!!<br />
-			<span class="comments">//Thank you for loving me love </span><br />
-			Sorry if this kind of gift palang kaya kong ibigay pero trust me I loved you deep inside my heart<br />
-			<span class="comments"></span><br />
-			Your everything got imprinted in my heart;<br />
-			As the time went on;<br />
-			The Bond grew stronger and stronger;<br />
-			Journey from Infatuation to Love;<br />
-			We have traveled a long way together;<br />
-			There have been fights ;<br />
-			<span class="comments">// And I'm sure there will be more.</span><br />
-			But our Bond will always grow back Stronger;<br />
-			<br>
-			<br>
-			All I want to say is:<br />
-			LOVE, I will love you forever;<br />
-			<br>
-			<br>
-			I miss you so much love and I miss this moment. !TOUCH THE HEART!<br />
-			<br>
-			<span id="heartspan">
-			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
-			</span>
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					I LOVE YOU FOREVER
-					<div id="elapseClock"></div>
-				</div>
-				<div id="loveu">
-					I LOVE YOU SO MUCH<br/>
-					<div class="signature">- DERICK</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+        <!-- Header -->
+        <header class="hero">
+            <h1 class="fade-in">Happy Monthsary!</h1>
+            <p class="subheadline fade-in">To my amazing [Girlfriend's Name], the light of my life. 💖</p>
+        </header>
 
-<script type="text/javascript">
-var offsetX = $("#loveHeart").width() / 2;
-var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2020, 11, 1);
-together.setHours(0);
-together.setMinutes(0);
-together.setSeconds(0);
-together.setMilliseconds(0);
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Greeting Section -->
+            <section class="greeting slide-up">
+                <div class="photo-container">
+                    <img src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Our+Photo" alt="Our special moment" class="photo">
+                </div>
+                <div class="message">
+                    <h2>One More Month of Us</h2>
+                    <p>Every month with you feels like a dream. You've made my world brighter, and I can't wait for all the adventures ahead. I love you more than words can say. 🌹</p>
+                    <button id="surprise-btn" class="surprise-btn">Click for a Surprise! 🎁</button>
+                    <div id="surprise" class="surprise hidden">
+                        <p>A little secret: You're my forever favorite. Let's make this month unforgettable! 😘</p>
+                    </div>
+                </div>
+            </section>
 
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
+            <!-- Countdown Section -->
+            <section class="countdown slide-up">
+                <h2>Until Our Next Monthsary</h2>
+                <div id="timer" class="timer-display">
+                    <span class="time-unit"><span id="days">00</span> Days</span>
+                    <span class="time-unit"><span id="hours">00</span> Hours</span>
+                    <span class="time-unit"><span id="minutes">00</span> Minutes</span>
+                    <span class="time-unit"><span id="seconds">00</span> Seconds</span>
+                </div>
+            </section>
 
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
+            <!-- Love Quote -->
+            <section class="quote slide-up">
+                <blockquote>
+                    "In your light I learn how to love. In your beauty, how to make poems. You dance inside my chest where no one sees you, but sometimes I do, and that sight becomes this art." 
+                    <cite>— Rumi</cite>
+                </blockquote>
+            </section>
+        </main>
 
-	adjustCodePosition();
-	$("#code").typewriter();
-}
-</script>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for [Girlfriend's Name] on [Current Monthsary Date, e.g., October 15, 2023]</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
