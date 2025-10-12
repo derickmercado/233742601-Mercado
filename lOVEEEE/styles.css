@@ -1,0 +1,430 @@
+/* CSS Variables for Easy Theming */
+:root {
+    --primary-color: #FF69B4; /* Hot pink for romance */
+    --secondary-color: #FFB6C1; /* Light pink */
+    --text-color: #333;
+    --bg-color: #FFF5F7; /* Soft pink background */
+    --rose-petal: #C71585; /* Deep rose red */
+    --rose-center: #DC143C; /* Crimson center */
+    --stem-green: #228B22; /* Forest green */
+    --leaf-green: #32CD32; /* Lime green */
+    --font-heading: 'Dancing Script', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--bg-color) 0%, #FFE4E1 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative; /* For absolute positioning of rose */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Hearts Animation */
+.hearts-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    color: var(--primary-color);
+    font-size: 20px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Pure CSS Rose Structure and Blooming Animation */
+.css-rose {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    pointer-events: none;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.css-rose.bloom {
+    animation: roseSway 4s ease-in-out infinite 3s, fadeInRose 0.5s forwards;
+}
+
+@keyframes fadeInRose {
+    to { opacity: 1; }
+}
+
+@keyframes roseSway {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
+    50% { transform: translate(-50%, -50%) rotate(2deg); }
+}
+
+/* Stem */
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 60px;
+    background: var(--stem-green);
+    transform: translateX(-50%);
+    border-radius: 2px 2px 4px 4px; /* Slight curve at base */
+}
+
+/* Leaves */
+.leaf {
+    position: absolute;
+    bottom: 20px;
+    width: 20px;
+    height: 12px;
+    background: var(--leaf-green);
+    border-radius: 50% 0 50% 0;
+    transform-origin: left center;
+}
+
+.leaf.left {
+    left: 45%;
+    transform: rotate(-30deg);
+}
+
+.leaf.right {
+    right: 45%;
+    transform: rotate(30deg);
+}
+
+/* Rose Center */
+.center {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: var(--rose-center);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* Petals (8 layered for depth) */
+.petal {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 20px;
+    height: 30px;
+    background: var(--rose-petal);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Heart shape */
+    transform: translateX(-50%) scale(0) rotate(0deg);
+    z-index: 2;
+    opacity: 0;
+}
+
+.petal.bloom {
+    animation: petalBloom 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes petalBloom {
+    0% {
+        transform: translateX(-50%) scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1) rotate(var(--petal-rotate));
+        opacity: 1;
+    }
+}
+
+/* Staggered petal positions and delays */
+.petal:nth-child(1) { --petal-rotate: 0deg; animation-delay: 0s; }
+.petal:nth-child(2) { --petal-rotate: 45deg; animation-delay: 0.2s; }
+.petal:nth-child(3) { --petal-rotate: 90deg; animation-delay: 0.4s; }
+.petal:nth-child(4) { --petal-rotate: 135deg; animation-delay: 0.6s; }
+.petal:nth-child(5) { --petal-rotate: 180deg; animation-delay: 0.8s; top: 8px; width: 18px; height: 28px; }
+.petal:nth-child(6) { --petal-rotate: 225deg; animation-delay: 1s; }
+.petal:nth-child(7) { --petal-rotate: 270deg; animation-delay: 1.2s; }
+.petal:nth-child(8) { --petal-rotate: 315deg; animation-delay: 1.4s; top: 3px; width: 22px; height: 32px; z-index: 1; }
+
+/* Header */
+.hero {
+    text-align: center;
+    padding: 60px 0 40px;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.greeting {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .greeting {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+}
+
+.photo-container {
+    text-align: center;
+}
+
+.photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.message h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.message p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.surprise-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative; /* For rose positioning reference */
+}
+
+.surprise-btn:hover {
+    background: #FF1493;
+    transform: translateY(-2px);
+}
+
+/* Countdown */
+.countdown {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.countdown h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    min-width: 80px;
+}
+
+.time-unit span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Quote */
+.quote {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quote blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.quote cite {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--secondary-color);
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 40px 0 20px;
+    }
+    
+    .content {
+        gap: 30px;
+        padding: 10px 0;
+    }
+    
+    .timer-display {
+        gap: 10px;
+    }
+    
+    .time-unit {
+        min-width: 60px;
+    }
+    
+    .photo {
+        max-width: 300px;
+    }
+
+    .css-rose {
+        width: 80px;
+        height: 100px;
+    }
+
+    .stem {
+        height: 50px;
+    }
+
+    .leaf {
+        bottom: 15px;
+        width: 16px;
+        height: 10px;
+    }
+
+    .petal {
+        width: 16px;
+        height: 24px;
+    }
+
+    .center {
+        width: 10px;
+        height: 10px;
+        top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .greeting {
+        grid-template-columns: 1fr;
+    }
+    
+    .message {
+        text-align: center;
+    }
+    
+    .countdown {
+        padding: 20px;
+    }
+
+    .css-rose {
+        width: 70px;
+        height: 90px;
+    }
+}
