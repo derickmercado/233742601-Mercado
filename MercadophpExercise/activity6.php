@@ -15,37 +15,81 @@
             <h1><i class="fas fa-dollar-sign"></i> Salary Calculator</h1>
             <p class="subtitle">Computing net salary with allowances and deductions in PHP.</p>
         </header>
-        
+
         <div class="activity-content">
             <?php
-            // Salary Calculator Task
-            $basic_salary = 30000;
-            $allowance = 5000;
-            $deduction = 3000;
-            $net_salary = $basic_salary + $allowance - $deduction;
+            // Initialize (avoid undefined notices)
+            $basic_salary = $allowance = $deduction = $net_salary = null;
+            $hasInput = isset($_GET['basic_salary'], $_GET['allowance'], $_GET['deduction'])
+                        && $_GET['basic_salary'] !== '' && $_GET['allowance'] !== '' && $_GET['deduction'] !== '';
+
+            if ($hasInput) {
+                // Convert to numbers
+                $basic_salary = floatval($_GET['basic_salary']);
+                $allowance    = floatval($_GET['allowance']);
+                $deduction    = floatval($_GET['deduction']);
+
+                // Compute
+                $net_salary = $basic_salary + $allowance - $deduction;
+
+                echo '<p>Computed net salary successfully.</p>';
+            } else {
+                echo '<p>Please enter Basic Salary, Allowance, and Deduction, then submit.</p>';
+            }
             ?>
+
+            <form action="" method="GET" class="salary-form">
+                <label>
+                    Basic Salary:
+                    <input type="number" name="basic_salary" step="0.01"
+                           value="<?php echo $basic_salary !== null ? htmlspecialchars($basic_salary) : ''; ?>">
+                </label><br><br>
+
+                <label>
+                    Allowance:
+                    <input type="number" name="allowance" step="0.01"
+                           value="<?php echo $allowance !== null ? htmlspecialchars($allowance) : ''; ?>">
+                </label><br><br>
+
+                <label>
+                    Deduction:
+                    <input type="number" name="deduction" step="0.01"
+                           value="<?php echo $deduction !== null ? htmlspecialchars($deduction) : ''; ?>">
+                </label><br><br>
+
+                <input type="submit" value="Calculate">
+            </form>
+
             <div class="output-card">
                 <h3><i class="fas fa-calculator"></i> Salary Breakdown</h3>
                 <div class="output-item">
                     <strong>Basic Salary:</strong>
-                    <span class="output-value">₱<?php echo number_format($basic_salary); ?></span>
+                    <span class="output-value">
+                        <?php echo $basic_salary !== null ? '₱' . number_format($basic_salary, 2) : '—'; ?>
+                    </span>
                 </div>
                 <div class="output-item">
                     <strong>Allowance:</strong>
-                    <span class="output-value">₱<?php echo number_format($allowance); ?></span>
+                    <span class="output-value">
+                        <?php echo $allowance !== null ? '₱' . number_format($allowance, 2) : '—'; ?>
+                    </span>
                 </div>
                 <div class="output-item">
                     <strong>Deduction:</strong>
-                    <span class="output-value">₱<?php echo number_format($deduction); ?></span>
+                    <span class="output-value">
+                        <?php echo $deduction !== null ? '₱' . number_format($deduction, 2) : '—'; ?>
+                    </span>
                 </div>
                 <div class="output-item">
                     <strong>Net Salary:</strong>
-                    <span class="output-value">₱<?php echo number_format($net_salary); ?></span>
+                    <span class="output-value">
+                        <?php echo $net_salary !== null ? '₱' . number_format($net_salary, 2) : '—'; ?>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <a href="index.php" class="back-btn"><i class="fas fa-arrow-left"></i> Go Back to Activity List</a>
 
     <script>
@@ -60,13 +104,17 @@
                     content.style.transform = 'translateY(0)';
                 }, 200);
             }
-        });
-        document.querySelector('.back-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            this.style.transform = 'translateX(-50%) scale(0.95)';
-            setTimeout(() => {
-                window.location.href = this.href;
-            }, 150);
+
+            const backBtn = document.querySelector('.back-btn');
+            if (backBtn) {
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'translateX(-50%) scale(0.95)';
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 150);
+                });
+            }
         });
     </script>
 </body>

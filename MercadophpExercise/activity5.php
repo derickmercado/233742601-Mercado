@@ -15,31 +15,53 @@
             <h1><i class="fas fa-exchange-alt"></i> Swapping Variables</h1>
             <p class="subtitle">Demonstrating variable exchange using a temporary variable in PHP.</p>
         </header>
-        
+
         <div class="activity-content">
+            <form action="" method="GET">
+                <label>Value of x:</label>
+                <input type="number" name="x" step="any" value="<?php echo isset($_GET['x']) ? htmlspecialchars($_GET['x']) : ''; ?>"><br><br>
+                <label>Value of y:</label>
+                <input type="number" name="y" step="any" value="<?php echo isset($_GET['y']) ? htmlspecialchars($_GET['y']) : ''; ?>"><br><br>
+                <input type="submit" value="Swap">
+            </form>
+
             <?php
-            $x = 10;
-            $y = 20;
-            $beforeX = $x;
-            $beforeY = $y;
-            $temp = $x;
-            $x = $y;
-            $y = $temp;
+            // Initialize
+            $beforeX = $beforeY = $x = $y = null;
+            $swapped = false;
+
+            if (isset($_GET['x']) && isset($_GET['y']) && $_GET['x'] !== '' && $_GET['y'] !== '') {
+                $x = floatval($_GET['x']);
+                $y = floatval($_GET['y']);
+                $beforeX = $x;
+                $beforeY = $y;
+
+                // Swap using temp variable
+                $temp = $x;
+                $x = $y;
+                $y = $temp;
+                $swapped = true;
+            } else {
+                echo "<p>Please enter values for both x and y, then click Swap.</p>";
+            }
             ?>
+
+            <?php if ($swapped): ?>
             <div class="output-card">
                 <h3><i class="fas fa-sync-alt"></i> Swap Results</h3>
                 <div class="output-item">
                     <strong>Before Swapping:</strong>
-                    <span class="output-value">x = <?php echo $beforeX; ?>, y = <?php echo $beforeY; ?></span>
+                    <span class="output-value">x = <?php echo htmlspecialchars($beforeX); ?>, y = <?php echo htmlspecialchars($beforeY); ?></span>
                 </div>
                 <div class="output-item">
                     <strong>After Swapping:</strong>
-                    <span class="output-value">x = <?php echo $x; ?>, y = <?php echo $y; ?></span>
+                    <span class="output-value">x = <?php echo htmlspecialchars($x); ?>, y = <?php echo htmlspecialchars($y); ?></span>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
-    
+
     <a href="index.php" class="back-btn"><i class="fas fa-arrow-left"></i> Go Back to Activity List</a>
 
     <script>
@@ -54,13 +76,17 @@
                     content.style.transform = 'translateY(0)';
                 }, 200);
             }
-        });
-        document.querySelector('.back-btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            this.style.transform = 'translateX(-50%) scale(0.95)';
-            setTimeout(() => {
-                window.location.href = this.href;
-            }, 150);
+
+            const backBtn = document.querySelector('.back-btn');
+            if (backBtn) {
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'translateX(-50%) scale(0.95)';
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 150);
+                });
+            }
         });
     </script>
 </body>
